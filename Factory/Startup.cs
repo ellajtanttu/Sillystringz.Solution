@@ -25,7 +25,7 @@ namespace FactoryManager
     services.AddMvc();
 
     services.AddEntityFrameworkMySql()
-        .AddDbContext<DealershipManagerContext>(options => options
+        .AddDbContext<FactoryManagerContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
 }
 
