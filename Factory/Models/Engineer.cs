@@ -9,6 +9,6 @@ namespace FactoryManager.Models
     }
     public int EngineerId {get; set;}
     public string Name {get; set;}
-    public virtual ICollection<EngineerMachine> MachineEntities {get;set;}
+    public virtual ICollection<EngineerMachine> EngineerEntities {get;set;}
   }
 }
