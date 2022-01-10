@@ -7,11 +7,11 @@ using System.Linq;
 
 namespace FactoryManager.Controllers
 {
-  public class MachineController : Controller
+  public class MachinesController : Controller
   {
     private readonly FactoryManagerContext _db;
 
-    public MachineController(FactoryManagerContext db)
+    public MachinesController(FactoryManagerContext db)
     {
       _db = db;
     }
