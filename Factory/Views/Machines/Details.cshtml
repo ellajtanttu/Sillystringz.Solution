@@ -1,3 +1,32 @@
+@* @{
+  Layout = "_Layout";
+}
+
+@model FactoryManager.Models.Machine
+@using FactoryManager.Models
+
+<h2>Machine Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model=> model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+<h3>Engineers: </h3>
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This machine has no qualified engineers.</p>
+}
+
+@foreach(EngineerMachine join in Model.JoinEntities)
+{
+  <li>@Html.ActionLink($"{join.Engineer.Name}", "Details", "Engineers", new { id = join.Engineer.EngineerId})</li>
+}
+
+<p>@Html.ActionLink("Edit Machine Profile", "Edit", new { id = Model.MachineId })</p>
+<p>@Html.ActionLink("Delete Machine", "Delete", new {id = Model.MachineId})</p>
+<p>@Html.ActionLink("Back to machines", "Index")</p>
+<p>@Html.ActionLink("Return to homepage", "Index", "Home")</p> *@
+
+
+
 @{
   Layout = "_Layout";
 }

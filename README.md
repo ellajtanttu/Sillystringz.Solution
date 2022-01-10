@@ -18,8 +18,8 @@
 
 ## Description
 
-<Insert relationship visual here>
-_TBD_
+<img src="Factory/wwwroot/img/table_visual.png" height="275px">
+Application that allows factory owner to keep track of engineers and machines in their factory. Practice with many to many relationships. Add, delete, edit, and otherwise control both engineers and machines, and which are connected to which. 
 
 ## Setup/Installation Requirements
 
@@ -38,7 +38,7 @@ _TBD_
   }
 }
 ```
-* _Once you have the appsettings.json fie, to create a database run: dotnet ef add initial_
+* _Once you have the appsettings.json file, to create a database run: dotnet ef add initial_
 * _To update the database in MySQL run: dotnet ef database update_
 * _At this point you will now be able to view the project by typing dotnet run in the terminal_
 

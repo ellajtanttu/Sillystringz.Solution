@@ -3,6 +3,37 @@
 }
 
 @model FactoryManager.Models.Engineer
+
+<h1>Engineer Details:</h2>
+<hr>
+<h2>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h2>
+
+<h3>Machines:</h3>
+@if(@Model.EngineerEntities.Count == 0)
+{
+  <p>This engineer is not qualified to work on any of the machines.</p>
+}
+@foreach (var join in Model.EngineerEntities)
+{
+  <li>@join.Machine.Name</li>
+  @using (Html.BeginForm("DeleteMachine", "Engineers"))
+  {
+    @Html.Hidden("joinId", @join.EngineerMachineId)
+    <input type="submit" value="Delete" class="btn btn-lg btn-dark"/>
+  }
+}
+
+<p>@Html.ActionLink("Edit engineer", "Edit", new { id = Model.EngineerId })</p>
+<p>@Html.ActionLink("Add a new machine to this engineer", "AddMachine", new { id = Model.EngineerId })</p>
+<p>@Html.ActionLink("Delete this engineer", "Delete", new { id = Model.EngineerId })</p>
+<p>@Html.ActionLink("Create a new engineer", "Create")</p>
+<p>@Html.ActionLink("return to machines page", "Index")</p>
+
+@* @{
+  Layout = "_Layout";
+}
+
+@model FactoryManager.Models.Engineer
 @using FactoryManager.Models
 
 <h2>Engineer Details</h2>
@@ -23,4 +54,4 @@
 <p>@Html.ActionLink("Edit Engineer Profile", "Edit", new { id = Model.EngineerId })</p>
 <p>@Html.ActionLink("Delete Engineer", "Delete", new {id = Model.EngineerId})</p>
 <p>@Html.ActionLink("Back to engineers", "Index")</p>
-<p>@Html.ActionLink("Return to homepage", "Index", "Home")</p>
+<p>@Html.ActionLink("Return to homepage", "Index", "Home")</p> *@
