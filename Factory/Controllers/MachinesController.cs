@@ -24,14 +24,10 @@ namespace FactoryManager.Controllers
     public ActionResult Create()
     {
       SelectList dbData = new SelectList(_db.Engineers, "EngineerId", "Name");
-      //Create the select list item you want to add
       SelectListItem selListItem = new SelectListItem() { Value = "0", Text = "None" };
-      //Create a list of select list items - this will be returned as your select list
       List<SelectListItem> newList = new List<SelectListItem>();
-      //Add select list item to list of selectlistitems
       newList.Add(selListItem);
       newList.AddRange(dbData);
-      //Return the list of selectlistitems as a selectlist
       ViewBag.EngineerId = new SelectList(newList, "Value", "Text", null);
       return View();
     }
